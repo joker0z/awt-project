@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  class_name: MyString
+  profile: MyString
+  nb_students: 1
+  teacher: 
+
+two:
+  class_name: MyString
+  profile: MyString
+  nb_students: 1
+  teacher: 

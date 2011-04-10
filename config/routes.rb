@@ -1,4 +1,20 @@
 AwtProject::Application.routes.draw do
+  resources :teachings
+
+  resources :plans
+
+  resources :teachers
+
+  resources :school_classes
+
+  resources :news
+
+  resources :tasks
+
+  resources :users
+  
+  resources :content
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
