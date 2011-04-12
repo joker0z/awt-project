@@ -1,4 +1,15 @@
 AwtProject::Application.routes.draw do
+  
+  resources :class_students
+
+  resources :task_documents
+
+  resources :documents
+
+  resources :students
+
+  root :to => 'content#index'
+  
   resources :teachings
 
   resources :plans

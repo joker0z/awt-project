@@ -2,10 +2,9 @@
 
 <table>
   <tr>
-    <th>Login</th>
-    <th>Password</th>
     <th>First name</th>
     <th>Last name</th>
+    <th>User</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,10 +12,9 @@
 
 <% @teachers.each do |teacher| %>
   <tr>
-    <td><%= teacher.login %></td>
-    <td><%= teacher.password %></td>
     <td><%= teacher.first_name %></td>
     <td><%= teacher.last_name %></td>
+    <td><%= teacher.user_id %></td>
     <td><%= link_to 'Show', teacher %></td>
     <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
     <td><%= link_to 'Destroy', teacher, :confirm => 'Are you sure?', :method => :delete %></td>

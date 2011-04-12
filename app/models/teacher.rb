@@ -1,3 +1,3 @@
 class Teacher < ActiveRecord::Base
-  has_many :school_class
+  belongs_to :user
 end

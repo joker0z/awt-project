@@ -5,8 +5,8 @@ development:
   database: awt
   pool: 5
   timeout: 5000
-  username: root
-  password: PLUGQ91I
+  username: whc
+  password: whC.02kz
   host: localhost
 
 
@@ -24,6 +24,6 @@ production:
   database: awt
   pool: 5
   timeout: 5000
-  username: root
-  password: PLUGQ91I
+  username: whc
+  password: whC.02kz
   host: localhost
