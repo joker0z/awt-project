@@ -2,9 +2,8 @@
 
 <table>
   <tr>
-    <th>Content</th>
     <th>Teacher</th>
-    <th>School class</th>
+    <th>Plan</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,9 +11,8 @@
 
 <% @tasks.each do |task| %>
   <tr>
-    <td><%= task.content %></td>
-    <td><%= task.teacher %></td>
-    <td><%= task.school_class %></td>
+    <td><%= task.teacher_id %></td>
+    <td><%= task.plan_id %></td>
     <td><%= link_to 'Show', task %></td>
     <td><%= link_to 'Edit', edit_task_path(task) %></td>
     <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>

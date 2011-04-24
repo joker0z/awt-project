@@ -1,11 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  content: MyText
-  teacher: 
-  school_class: 
+  teacher_id: 1
+  plan_id: 1
 
 two:
-  content: MyText
-  teacher: 
-  school_class: 
+  teacher_id: 1
+  plan_id: 1

@@ -2,9 +2,9 @@
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Room</th>
     <th>Hours</th>
-    <th>School class</th>
+    <th>Subject</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,9 +12,9 @@
 
 <% @plans.each do |plan| %>
   <tr>
-    <td><%= plan.name %></td>
+    <td><%= plan.room %></td>
     <td><%= plan.hours %></td>
-    <td><%= plan.school_class_id %></td>
+    <td><%= plan.subject %></td>
     <td><%= link_to 'Show', plan %></td>
     <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
     <td><%= link_to 'Destroy', plan, :confirm => 'Are you sure?', :method => :delete %></td>
