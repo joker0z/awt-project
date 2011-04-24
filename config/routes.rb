@@ -1,5 +1,7 @@
 AwtProject::Application.routes.draw do
   
+  devise_for :users
+
   resources :class_students
 
   resources :task_documents
