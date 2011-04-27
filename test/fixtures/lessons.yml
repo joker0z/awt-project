@@ -2,8 +2,8 @@
 
 one:
   class_id: 1
-  teacher_id: 1
+  plan_id: 1
 
 two:
   class_id: 1
-  teacher_id: 1
+  plan_id: 1
