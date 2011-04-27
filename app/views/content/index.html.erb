@@ -1,3 +1,13 @@
 <h1>Strona główna</h1>
 
 <br />
+
+<h2>Klasy</h2>
+<%= link_to 'Klasy', school_classes_path %><br />
+
+<h2>Aktualnosci</h2>
+<% News.all.each do |n| %>
+<h3><%= n.title %></h3>
+<p><%= n.content %></p>
+<hr />
+<% end %>

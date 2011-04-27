@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Klasa:</b>
   <%= @school_class.name %>
 </p>
 
-<h2>Newsy</h2>
-<% @school_class.news.each do |one| %>
-<p>News #<%= one.id %>: <%= one.title %></p>
-<%end
+<h2>Zadania</h2>
+<% @school_class.plans.each do |one| 
+    one.tasks.each do |task| %>
+      <h3># <%= task.title %></h3>
+      <p><%= task.description %></p>
+      <hr />
+<%  end
+end 
 %>
 
 <%= link_to 'Edit', edit_school_class_path(@school_class) %> |
