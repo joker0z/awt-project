@@ -1,11 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  room: MyString
-  hours: 2011-04-24 21:50:03
-  subject: MyString
-
-two:
-  room: MyString
-  hours: 2011-04-24 21:50:03
-  subject: MyString
+<% 
+letters = ['Matematyka', 'Jezyk Polski', 'Jezyk Angielski', 'Biologia', 'Chemia', 'Fizyka', 'Jezyk Niemiecki']
+for i in 1..30 %>
+fix_<%= i %>:
+  id: <%= i %>
+  room: sala <%= i %>
+  subject: <%= letters.shuffle.first %> 
+<% end %>

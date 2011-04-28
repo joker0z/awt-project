@@ -1,11 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  user: 
-
-two:
-  first_name: MyString
-  last_name: MyString
-  user: 
+<% for i in 1..80 %>
+fix_<%= i %>:
+  id: <%= i %>
+  first_name: <%= ['Jozef', 'Alicja', 'Katarzyna', 'Zenon', 'Onufry', 'Marian', 'Anna'].shuffle.first %> 
+  last_name: <%= ['Nowak', 'Kowalsky', 'Kowalczyk', 'Iwaszkiewicz', 'Zielinski'].shuffle.first %> 
+  user_id: <%= i %>
+<% end %>

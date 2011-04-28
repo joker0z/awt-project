@@ -1,9 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  login: MyString
-  password: MyString
-
-two:
-  login: MyString
-  password: MyString
+<% for i in 1..100 %>
+fix_<%= i %>:
+  id: <%= i %>
+  email: user_<%= i %>@asdf.pl
+<% end %>

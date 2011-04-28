@@ -1,9 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  teacher_id: 1
-  plan_id: 1
-
-two:
-  teacher_id: 1
-  plan_id: 1
+<% for i in 1..20 
+     for j in 1..10 %>
+fix_<%= i.to_s + j.to_s %>:
+  title: Ciezkie tyranie
+  description: Przeokrutnie trudne zadania.
+  plan_id: <%= j %>
+  teacher_id: <%= i %>
+<%   end
+   end %>
