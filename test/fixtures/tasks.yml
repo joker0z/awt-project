@@ -1,10 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-<% for i in 1..20 
-     for j in 1..10 %>
+<% for i in 1..10 
+     for j in 1..2 %>
 fix_<%= i.to_s + j.to_s %>:
-  title: Ciezkie tyranie
-  description: Przeokrutnie trudne zadania.
+  title: Ciezkie tyranie <%= i.to_s + "- " + j.to_s %>
+  description: Przeokrutnie trudna robota.
   plan_id: <%= j %>
   teacher_id: <%= i %>
 <%   end
