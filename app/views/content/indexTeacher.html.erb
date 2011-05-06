@@ -1,0 +1,10 @@
+<h1>Strona główna dla nauczyciela</h1>
+
+<br />
+
+<h2>Najbliższe zajęcia</h2>
+<% Plan.all.each do |n| %>
+<h3><%= n.subject %></h3>
+<p><%= n.room %></p>
+<hr />
+<% end %>

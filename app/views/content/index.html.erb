@@ -1,13 +1,22 @@
-<h1>Strona główna</h1>
+<h1>Strona główna dla ucznia</h1>
 
 <br />
-
-<h2>Klasy</h2>
-<%= link_to 'Klasy', school_classes_path %><br />
 
 <h2>Aktualnosci</h2>
 <% News.all.each do |n| %>
 <h3><%= n.title %></h3>
 <p><%= n.content %></p>
+<hr />
+<% end %>
+
+<h2>Zadania</h2>
+<p>Na dziś: brak zadań!</p>
+<p>Na jutro: brak zadań!</p>
+<p>Najbliższy tydzień: brak zadań!</p>
+
+<h2>Materiały</h2>
+<% Document.all.each do |n| %>
+<h3><%= n.name %></h3>
+<p><%= n.description %></p>
 <hr />
 <% end %>

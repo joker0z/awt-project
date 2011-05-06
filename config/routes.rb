@@ -9,7 +9,7 @@ AwtProject::Application.routes.draw do
   resources :documents
 
   resources :students
-
+  
   root :to => 'content#index'
   
   resources :teachings
@@ -26,6 +26,7 @@ AwtProject::Application.routes.draw do
 
   resources :users
   
+  match 'teacher', :to => 'content#indexTeacher'
   resources :content
 
   # The priority is based upon order of creation:
