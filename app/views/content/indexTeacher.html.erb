@@ -2,12 +2,10 @@
 
 <br />
 
-<h2>Materiały</h2>
-
 <h2>Najbliższe zajęcia</h2>
-<% #Plan.joins(:school_classes => :teachers)
-    #.where('teachers.id = ?', 81)
-    Plan.where('day >= ?', Time.now.wday%6)
+<% Plan.joins(:school_classes => :teachers)
+    .where('teachers.id = ?', 1)
+    .where('day >= ?', Time.now.wday%6)
     .order('day DESC')
     .limit(5).each do |n| %>
 <h3><%= n.subject %></h3>
