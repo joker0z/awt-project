@@ -8,11 +8,13 @@
 <p><%= n.content %></p>
 <hr />
 <% end %>
+<p style="text-align:right"><%= link_to 'Wcześniejsze wiadomości', news_index_path %></p>
 
 <h2>Zadania</h2>
 <p>Na dziś: brak zadań!</p>
 <p>Na jutro: brak zadań!</p>
 <p>Najbliższy tydzień: brak zadań!</p>
+<p style="text-align:right"><%= link_to 'Pełna lista zadań', tasks_path %></p>
 
 <h2>Materiały</h2>
 <% Document.all.each do |n| %>
@@ -21,3 +23,4 @@
 <p><%= link_to n.file.url, n.file.url %></p>
 <hr />
 <% end %>
+<p style="text-align:right"><%= link_to 'Pozostałe materiały', documents_path %></p>

@@ -2,9 +2,13 @@
 
 <% 
 letters = ['Matematyka', 'Jezyk Polski', 'Jezyk Angielski', 'Biologia', 'Chemia', 'Fizyka', 'Jezyk Niemiecki']
+hours = [8,9,10,11,12,13,14,15]
+days = [1,2,3,4,5]
 for i in 1..30 %>
 fix_<%= i %>:
   id: <%= i %>
   room: sala <%= i %>
+  hour: <%= hours.shuffle.first %> 
+  day: <%= days.shuffle.first %> 
   subject: <%= letters.shuffle.first %> 
 <% end %>
