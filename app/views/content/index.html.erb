@@ -3,8 +3,9 @@
 <br />
 
 <h2>Aktualnosci</h2>
-<% News.all.each do |n| %>
+<% @news.each do |n| %>
 <h3><%= n.title %></h3>
+<p><%= n.created_at %></p>
 <p><%= n.content %></p>
 <hr />
 <% end %>
@@ -17,7 +18,7 @@
 <p style="text-align:right"><%= link_to 'Pełna lista zadań', tasks_path %></p>
 
 <h2>Materiały</h2>
-<% Document.all.each do |n| %>
+<% @docs.each do |n| %>
 <h3><%= n.name %></h3>
 <p><%= n.description %></p>
 <p><%= link_to n.file.url, n.file.url %></p>

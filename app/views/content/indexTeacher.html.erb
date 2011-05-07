@@ -2,13 +2,17 @@
 
 <br />
 
+<h2>Klasy</h2>
+<span>
+<% @classes.each do |n| %>
+<%= link_to n.name, n %> #
+<% end %>
+</span>
+
 <h2>Najbliższe zajęcia</h2>
-<% Plan.joins(:school_classes => :teachers)
-    .where('teachers.id = ?', 1)
-    .where('day >= ?', Time.now.wday%6)
-    .order('day DESC')
-    .limit(5).each do |n| %>
+<% @plans.each do |n| %>
 <h3><%= n.subject %></h3>
 <p><%= n.room %></p>
+<p><%= Date::DAYNAMES[n.day] + ', godz. ' + n.hour.to_s  %></p>
 <hr />
 <% end %>
