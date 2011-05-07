@@ -18,5 +18,6 @@
 <% Document.all.each do |n| %>
 <h3><%= n.name %></h3>
 <p><%= n.description %></p>
+<p><%= link_to n.file.url, n.file.url %></p>
 <hr />
 <% end %>
