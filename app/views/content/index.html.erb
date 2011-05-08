@@ -12,9 +12,9 @@
 <p style="text-align:right"><%= link_to 'Wcześniejsze wiadomości', news_index_path %></p>
 
 <h2>Zadania</h2>
-<p>Na dziś: brak zadań!</p>
-<p>Na jutro: brak zadań!</p>
-<p>Najbliższy tydzień: brak zadań!</p>
+<p>Na dziś: <%= @tasksForToday %> zadań</p>
+<p>Na jutro: <%= @tasksForTomorrow %> zadań</p>
+<p>Najbliższy tydzień: <%= @tasksForWeek %> zadań</p>
 <p style="text-align:right"><%= link_to 'Pełna lista zadań', tasks_path %></p>
 
 <h2>Materiały</h2>

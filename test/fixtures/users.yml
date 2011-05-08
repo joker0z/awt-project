@@ -1,6 +1,16 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-<% for i in 1..100 %>
+test_student:
+  id: 1
+  email: uczen@szkola.pl
+  encrypted_password: $2a$10$DRKrFV1Uf1qXBc1EtbiAze3Lo8ycDvlEtqwSfWZbg/AqjASqMk1XC
+
+test_teacher:
+  id: 100
+  email: nauczyciel@szkola.pl
+  encrypted_password: $2a$10$.2z6rlbbX7IirNOVvBT4P.aA4tsS86fxZYxCyD4PtJYSuDoZCum7W
+
+<% for i in 2..99 %>
 fix_<%= i %>:
   id: <%= i %>
   email: user_<%= i %>@asdf.pl
