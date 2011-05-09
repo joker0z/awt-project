@@ -18,10 +18,11 @@ class ContentController < ApplicationController
     if current_user.teacher.blank?
       redirect_to :action => 'index'
     end
-    @classes = SchoolClass.joins(:teachers).where('teachers.id = ?', 1)
+    @classes = SchoolClass.joins(:teachers).where('teachers.id = ?', current_user.teacher).group('name').order('name ASC')
     @plans = Plan.joins(:school_classes => :teachers)
       .where('teachers.id = ?', current_user.teacher)
-      .order('day DESC')
+      .order('day ASC, hour ASC')
+      .group('plans.hour,plans.day')
       .limit(5)
   end
 end

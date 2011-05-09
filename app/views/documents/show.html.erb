@@ -17,8 +17,9 @@
 
 <p>
   <b>Teacher:</b>
-  <%= @document.teacher_id %>
+  <%= @document.teacher.first_name + " " + @document.teacher.last_name %>
 </p>
+<p><%= link_to "Pobierz plik", @document.file.url %></p>
 
 
 <%= link_to 'Edit', edit_document_path(@document) %> |

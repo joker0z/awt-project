@@ -6,14 +6,13 @@
 </p>
 
 <h2>Zadania</h2>
-<% @school_class.plans.each do |one| 
-    one.tasks.each do |task| %>
+<% Task.joins(:plan => :school_classes)
+      .where('school_classes.id = ?', @school_class).each do |task| %>
       <h3># <%= task.title %></h3>
       <p><%= task.description %></p>
+      <p>Materiały:</p>
+      <% task.documents.each do |doc| %>
+      <p><%= link_to doc.name, doc %></p>
+      <% end %>
       <hr />
-<%  end
-end 
-%>
-
-<%= link_to 'Edit', edit_school_class_path(@school_class) %> |
-<%= link_to 'Back', school_classes_path %>
+<% end %>

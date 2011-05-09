@@ -1,6 +1,6 @@
-class CreateTaskDocuments < ActiveRecord::Migration
+class CreateDocumentsTasks < ActiveRecord::Migration
   def self.up
-    create_table :task_documents do |t|
+    create_table :documents_tasks, :id => false do |t|
       t.boolean :is_published
       t.integer :task_id
       t.integer :document_id
@@ -10,6 +10,6 @@ class CreateTaskDocuments < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :task_documents
+    drop_table :documents_tasks
   end
 end

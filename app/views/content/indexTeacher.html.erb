@@ -16,10 +16,3 @@
 <p><%= Date::DAYNAMES[n.day] + ', godz. ' + n.hour.to_s  %></p>
 <hr />
 <% end %>
-
-<h2>Materiały</h2>
-<span>
-<% Document.where('teacher_id = ?', 1).each do |n| %>
-<%= link_to n.name, n %> #
-<% end %>
-</span>
