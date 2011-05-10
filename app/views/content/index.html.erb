@@ -1,28 +1,37 @@
-<h1>Strona główna dla ucznia</h1>
 
-<br />
+<div id="CONTEXT">
+	<div id="LEFT">
+		<div id="tasks" style="background-color:#0066CC; width: 365px;">	
+			<div id="tasks"style="padding: 45px 25px 35px 10px;">		
+				<p>Na dziś: <%= @tasksForToday %> zadań</p>
+				<p>Na jutro: <%= @tasksForTomorrow %> zadań</p>
+				<p>Najbliższy tydzień: <%= @tasksForWeek %> zadań</p>				
+				<p style="text-align:right"><%= link_to 'Pełna lista zadań', tasks_path %></p>
+			</div>
+		</div> 
+		<div id="news" style="background-color:#0066CC; width: 365px; margin-top:5px;" >	
+			<div style="padding: 45px 5px 5px 15px; overflow: auto">
+				<% @news.each do |n| %>
+				<h3><%= n.title %></h3>
+				<p><%= n.created_at %></p>
+				<p><%= n.content %></p>
+				<% end %>
+				<br />
+				<p style="text-align:right"><%= link_to 'Wcześniejsze wiadomości', news_index_path %></p>
+			</div>
+		</div>
+	</div>
+	<div id="RIGHT" style="background-color:#0066CC; ">
+		<div style="padding: 45px 5px 5px 15px; margin:5px;">
+			<% @docs.each do |n| %>
+			<h3><%= n.name %></h3>
+			<p><%= n.description %></p>
+			<p><%= link_to n.file.url, n.file.url %></p>
+			<br />
+			<% end %>
+		<p style="text-align:right"><%= link_to 'Pozostałe materiały', documents_path %></p>	
+		</div>	
+	</div>	
+</div>	
 
-<h2>Aktualnosci</h2>
-<% @news.each do |n| %>
-<h3><%= n.title %></h3>
-<p><%= n.created_at %></p>
-<p><%= n.content %></p>
-<hr />
-<% end %>
-<p style="text-align:right"><%= link_to 'Wcześniejsze wiadomości', news_index_path %></p>
 
-<h2>Zadania</h2>
-<p>Na dziś: <% if @tasksForToday == 0 %>
-brak zadań! <% else @tasksForToday %> szt. zadań<% end %></p>
-<p>Na jutro: <%= @tasksForTomorrow %> zadań</p>
-<p>Najbliższy tydzień: <%= @tasksForWeek %> zadań</p>
-<p style="text-align:right"><%= link_to 'Pełna lista zadań', tasks_path %></p>
-
-<h2>Materiały</h2>
-<% @docs.each do |n| %>
-<h3><%= n.name %></h3>
-<p><%= n.description %></p>
-<p><%= link_to n.file.url, n.file.url %></p>
-<hr />
-<% end %>
-<p style="text-align:right"><%= link_to 'Pozostałe materiały', documents_path %></p>
