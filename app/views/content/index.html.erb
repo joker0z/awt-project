@@ -12,7 +12,8 @@
 <p style="text-align:right"><%= link_to 'Wcześniejsze wiadomości', news_index_path %></p>
 
 <h2>Zadania</h2>
-<p>Na dziś: <%= @tasksForToday %> zadań</p>
+<p>Na dziś: <% if @tasksForToday == 0 %>
+brak zadań! <% else @tasksForToday %> szt. zadań<% end %></p>
 <p>Na jutro: <%= @tasksForTomorrow %> zadań</p>
 <p>Najbliższy tydzień: <%= @tasksForWeek %> zadań</p>
 <p style="text-align:right"><%= link_to 'Pełna lista zadań', tasks_path %></p>

@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 <% titles = ['Wypracowanie - co mial poeta na mysli', 'Sprawdzian z alkoholi', 'Lista zadan z wielomianow', 'Anatomia zebry', 'Wycieczka za drzwi do lasu', 'Czasowniki nieregularne']%>
-<% for i in 1..20 %>
+<% for i in 1..250 %>
 fix_<%= i.to_s %>:
   id: <%= i %>
   title: <%= titles.shuffle.first %>
   description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-  plan_id: <%= 1+rand(30) %>
+  lesson_id: <%= 1+rand(200) %>
   teacher_id: <%= 1+rand(20) %>
 <% end %>

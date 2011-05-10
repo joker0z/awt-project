@@ -1,9 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  class_id: 1
-  plan_id: 1
-
-two:
-  class_id: 1
-  plan_id: 1
+<% for i in 1..200 %>
+fix_<%= i.to_s + j.to_s %>:
+  id: <%= i %>
+  school_class_id: <%= 1+rand(15) %>
+  plan_id: <%= 1+rand(30) %>
+  date: <%= Time.parse 'May '+(19+rand(13)).to_s  %>
+<% end %>

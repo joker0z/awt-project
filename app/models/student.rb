@@ -1,4 +1,4 @@
 class Student < ActiveRecord::Base
   belongs_to :user
-  has_and_belongs_to_many :classes
+  has_and_belongs_to_many :school_classes
 end

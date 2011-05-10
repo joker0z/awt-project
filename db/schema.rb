@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110509180319) do
+ActiveRecord::Schema.define(:version => 20110510171335) do
 
   create_table "class_students", :force => true do |t|
     t.integer  "class_id"
@@ -41,10 +41,11 @@ ActiveRecord::Schema.define(:version => 20110509180319) do
   end
 
   create_table "lessons", :force => true do |t|
-    t.integer  "class_id"
     t.integer  "plan_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "date"
+    t.integer  "school_class_id"
   end
 
   create_table "news", :force => true do |t|
@@ -76,6 +77,11 @@ ActiveRecord::Schema.define(:version => 20110509180319) do
     t.datetime "updated_at"
   end
 
+  create_table "school_classes_students", :id => false, :force => true do |t|
+    t.integer "school_class_id"
+    t.integer "student_id"
+  end
+
   create_table "school_classes_teachers", :id => false, :force => true do |t|
     t.integer "school_class_id"
     t.integer "teacher_id"
@@ -91,11 +97,16 @@ ActiveRecord::Schema.define(:version => 20110509180319) do
 
   create_table "tasks", :force => true do |t|
     t.integer  "teacher_id"
-    t.integer  "plan_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
     t.string   "description"
+    t.integer  "lesson_id"
+  end
+
+  create_table "tasks_documents", :id => false, :force => true do |t|
+    t.integer "document_id", :null => false
+    t.integer "task_id",     :null => false
   end
 
   create_table "teachers", :force => true do |t|

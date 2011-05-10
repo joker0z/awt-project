@@ -11,7 +11,7 @@
 
 <p>
   <b>Do zajęć:</b>
-  <%= @task.plan.subject + ", " + Date::DAYNAMES[@task.plan.day] + ', godz. ' + @task.plan.hour.to_s  %>
+  <%= @task.lesson.plan.subject + ", " + Date::DAYNAMES[@task.lesson.plan.day] + ', godz. ' + @task.lesson.plan.hour.to_s + ' # ' + @task.lesson.date.to_s %>
 </p>
 
 <h3>Materiały</h3>

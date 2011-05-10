@@ -14,7 +14,7 @@ end %>
 <%= link_to '# Dodaj materiały', new_document_path %>
 
 <h2>Zadania</h2>
-<% Task.joins(:plan => :school_classes)
+<% Task.joins(:lesson => :school_class)
       .where('school_classes.id = ?', @school_class).each do |task| %>
       <h3># <%= task.title %></h3>
       <p><%= task.description %></p>
