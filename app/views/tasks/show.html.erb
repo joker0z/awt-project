@@ -1,14 +1,23 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Zadanie</h1>
+<h2><%= @task.title %></h2>
+<p><%= @task.description %></p>
+
 <p>
-  <b>Teacher:</b>
-  <%= @task.teacher_id %>
+  <b>Dodał:</b>
+  <%= @task.teacher.first_name + " " + @task.teacher.last_name %>
 </p>
 
 <p>
-  <b>Plan:</b>
-  <%= @task.plan_id %>
+  <b>Do zajęć:</b>
+  <%= @task.plan.subject + ", " + Date::DAYNAMES[@task.plan.day] + ', godz. ' + @task.plan.hour.to_s  %>
 </p>
+
+<h3>Materiały</h3>
+<% @task.documents.each do |doc| %>
+<p><%= link_to doc.name, doc %></p>
+<% end %>
 
 
 <%= link_to 'Edit', edit_task_path(@task) %> |

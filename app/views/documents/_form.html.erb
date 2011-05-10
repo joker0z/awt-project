@@ -27,9 +27,9 @@
     <%= f.label :is_published %><br />
     <%= f.check_box :is_published %>
   </div>
-  <div class="field">
+  <div class="field" style="display:none">
     <%= f.label :teacher_id %><br />
-    <%= f.text_field :teacher_id %>
+    <%= f.text_field :teacher_id, :value => current_user.teacher.first.id  %>
   </div>
   <div class="actions">
     <%= f.submit %>

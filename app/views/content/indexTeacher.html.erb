@@ -14,5 +14,10 @@
 <h3><%= n.subject %></h3>
 <p><%= n.room %></p>
 <p><%= Date::DAYNAMES[n.day] + ', godz. ' + n.hour.to_s  %></p>
+<h4>Powiązane zadania</h4>
+<% n.tasks.each do |task| %>
+<p><%= link_to task.title, task %></p>
+<% end %>
+<p><%= link_to '# Dodaj zadanie', new_task_path %></p>
 <hr />
 <% end %>

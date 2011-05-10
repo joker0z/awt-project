@@ -5,6 +5,14 @@
   <%= @school_class.name %>
 </p>
 
+<h2>Materiały</h2>
+<% Document.where('teacher_id = ?', current_user.teacher.first.id).each() do |doc| 
+   unless doc.tasks.any? %>
+      <p><%= link_to doc.name, doc %></p>
+<% end
+end %>
+<%= link_to '# Dodaj materiały', new_document_path %>
+
 <h2>Zadania</h2>
 <% Task.joins(:plan => :school_classes)
       .where('school_classes.id = ?', @school_class).each do |task| %>
