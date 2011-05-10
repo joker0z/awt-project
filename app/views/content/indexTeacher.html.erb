@@ -1,23 +1,21 @@
-<h1>Strona główna dla nauczyciela</h1>
-
-<br />
-
-<h2>Klasy</h2>
-<span>
-<% @classes.each do |n| %>
-<%= link_to n.name, n %> #
-<% end %>
-</span>
-
-<h2>Najbliższe zajęcia</h2>
-<% @lessons.each do |lesson| %>
-<h3><%= lesson.plan.subject %></h3>
-<p><%= lesson.plan.room %></p>
-<p><%= Date::DAYNAMES[lesson.plan.day] + ', godz. ' + lesson.plan.hour.to_s  %></p>
-<h4>Powiązane zadania</h4>
-<% lesson.tasks.each do |task| %>
-<p><%= link_to task.title, task %></p>
-<% end %>
-<p><%= link_to '# Dodaj zadanie', new_task_path %></p>
-<hr />
-<% end %>
+<div id="CONTEXT">
+	<div id="LEFT" style="background-color:#33CC00; width: 365px; height:auto;">
+		<div style="padding: 45px 5px 5px 15px; margin:5px;">
+			<h2>Klasy</h2>
+			<% @classes.each do |n| %>
+			<%= link_to n.name, n %> #
+			<% end %>
+		</div>
+	</div> 
+	<div id="RIGHT" style="background-color:#33CC00; height:auto;px;">
+		<div style="padding: 45px 5px 5px 15px; margin:5px;">
+			<h2>Najbliższe zajęcia</h2>
+			<% @plans.each do |n| %>
+			<h3><%= n.subject %></h3>
+			<p><%= n.room %></p>
+			<p><%= Date::DAYNAMES[n.day] + ', godz. ' + n.hour.to_s  %></p>
+			<hr />
+			<% end %>
+		</div>
+	</div>	
+</div>
