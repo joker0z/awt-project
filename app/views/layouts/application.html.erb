@@ -5,26 +5,30 @@
   <meta http-equiv="Content-Type" content="text/html;.
   charset=utf-8" />
   <meta http-equiv="Content-Language" content="pl-PL" />
-  <title>asdf</title>
-  <%= javascript_include_tag 'jquery', 'nested_form' %>
+  <title>E-szkola</title>
   <%= stylesheet_link_tag "style" %>
+  <%= javascript_include_tag 'jquery-1.4.2.min', 'rails', 'application' %>
 </head>
-<body id="library">
-  <div id="container">
-    <div id="header">
-      <div id="user_nav">
-	<% if user_signed_in? %>
-	  Zalogowany jako <%= current_user.email %>. <%= link_to "Wyloguj", destroy_user_session_path %>
-	<% else %>
-	  <%= link_to "Zaloguj", new_user_session_path %>
-	<% end %>
-	<p>>> <%= link_to "Strona glowna", root_path %></p>
-      </div>
-    </div>
-    <div id="content">
-      <%= yield -%>
-    </div>
-    <div id="sidebar"></div>
-  </div>
+<body>
+	<div id="top">
+		<%= image_tag("../images/top.png", :alt => "e-szkola") =%>
+    </div> 
+  	<div>	
+    	<div id="login">
+		<h2><% if user_signed_in? %>
+	 	 Zalogowany jako <%= current_user.email %>  <%= link_to "Wyloguj", destroy_user_session_path %>
+		<% else %></h2><h1>
+		  <%= link_to "Zaloguj", new_user_session_path %>
+		<% end %></h1>
+		<h3><%= link_to "Strona glowna", root_path %></h3>
+	    </div>
+	    <div style="background-color: #fff123;">
+      	<%= yield -%>
+   		</div>
+   		<div id="sidebar"></div>
+  	</div>
+  	<div id="footer">
+	 <h2> tekst  tekst tekst </h2>
+	</div>	
 </body>
 </html>
