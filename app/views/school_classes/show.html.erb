@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Klasa:</b>
+  <%= @school_class.name %>
+</p>
+
+<h2>Materiały</h2>
+<% Document.where('teacher_id = ?', current_user.teacher.first.id).each() do |doc| 
+   unless doc.tasks.any? %>
+      <p><%= link_to doc.name, doc %></p>
+<% end
+end %>
+<%= link_to '# Dodaj materiały', new_document_path %>
+
+<h2>Zadania</h2>
+<% Task.joins(:lesson => :school_class)
+      .where('school_classes.id = ?', @school_class).each do |task| %>
+      <h3># <%= task.title %></h3>
+      <p><%= task.description %></p>
+      <p>Materiały:</p>
+      <% task.documents.each do |doc| %>
+      <p><%= link_to doc.name, doc %></p>
+      <% end %>
+      <hr />
+<% end %>

@@ -1,0 +1,12 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+<% 
+names = ['Sciaga z alkoholi', 'Poeci rumunskiego renesansu', 'Lista czasownikow nieregularnych', 'Budowa niby-nozek ameby', 'Pan Tadeusz a sprawa polska', 'Lista zadan z wielomianow']
+for i in 1..20 %>
+fix_<%= i %>:
+  id: <%= i %>
+  name: <%= names.shuffle.first %> 
+  description: Lorem ipsum dolor sit amet, consectetur
+  is_published: true
+  teacher_id: <%= i %>
+<% end %>

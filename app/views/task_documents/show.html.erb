@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Is published:</b>
+  <%= @task_document.is_published %>
+</p>
+
+<p>
+  <b>Task:</b>
+  <%= @task_document.task_id %>
+</p>
+
+<p>
+  <b>Document:</b>
+  <%= @task_document.document_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_task_document_path(@task_document) %> |
+<%= link_to 'Back', task_documents_path %>

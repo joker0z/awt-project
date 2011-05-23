@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+<% 
+letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+for i in 1..15 %>
+fix_<%= i %>:
+  id: <%= i %>
+  name: <%= (i%4+1).to_s + letters[i%4+1] %> 
+<% end %>

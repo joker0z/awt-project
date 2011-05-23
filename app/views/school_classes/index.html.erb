@@ -1,0 +1,9 @@
+<h1>Listing school_classes</h1>
+
+<ul>
+<% @school_classes.each do |school_class| %>
+  <li>
+    <td><%= link_to school_class.name, school_class %></td>
+  </li>
+<% end %>
+</ul>

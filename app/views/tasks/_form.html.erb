@@ -1,0 +1,65 @@
+<%= nested_form_for(@task, :html => {:multipart => true}) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" style="display:none">
+    <%= f.label :teacher_id %><br />
+    <%= f.text_field :teacher_id, :value => current_user.teacher.first.id  %>
+  </div>
+  <div class="field">
+    <%= f.label :lesson_id %><br />
+    <%= f.text_field :lesson_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+
+  <h2>Powiązane materiały</h2>
+
+  <%= f.fields_for :documents do |doc_form| %>
+
+  <div class="field">
+    <%= doc_form.label :file %><br />
+    <%= doc_form.file_field :file %>
+  </div>
+  <div class="field">
+    <%= doc_form.label :name %><br />
+    <%= doc_form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= doc_form.label :description %><br />
+    <%= doc_form.text_area :description %>
+  </div>
+  <div class="field">
+    <%= doc_form.label :is_published %><br />
+    <%= doc_form.check_box :is_published %>
+  </div>
+  <div class="field" style="display:none">
+    <%= doc_form.label :teacher_id %><br />
+    <%= doc_form.text_field :teacher_id, :value => current_user.teacher.first.id %>
+  </div>
+
+    <%= doc_form.link_to_remove "Remove this document" %>
+    <hr />
+  <% end %>
+  <%= f.link_to_add "Add a doc", :documents %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

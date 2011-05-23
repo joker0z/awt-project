@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;.
+  charset=utf-8" />
+  <meta http-equiv="Content-Language" content="pl-PL" />
+  <title>E-szkola</title>
+  <%= stylesheet_link_tag "style" %>
+  <%= javascript_include_tag 'jquery-1.4.2.min', 'rails', 'application' %>
+</head>
+<body>
+	<div id="top">
+		<%= image_tag("../images/top.png", :alt => "e-szkola") =%>
+    </div> 
+  	<div>	
+    	<div id="login">
+		<h2><% if user_signed_in? %>
+	 	 Zalogowany jako <%= current_user.email %>  <%= link_to "Wyloguj", destroy_user_session_path %>
+		<% else %></h2><h1>
+		  <%= link_to "Zaloguj", new_user_session_path %>
+		<% end %></h1>
+		<h3><%= link_to "Strona glowna", root_path %></h3>
+	    </div>
+	    <div style="background-color: #fff123;">
+      	<%= yield -%>
+   		</div>
+   		<div id="sidebar"></div>
+  	</div>
+  	<div id="footer">
+	 <h2> tekst  tekst tekst </h2>
+	</div>	
+</body>
+</html>

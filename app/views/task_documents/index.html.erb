@@ -1,0 +1,27 @@
+<h1>Listing task_documents</h1>
+
+<table>
+  <tr>
+    <th>Is published</th>
+    <th>Task</th>
+    <th>Document</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @task_documents.each do |task_document| %>
+  <tr>
+    <td><%= task_document.is_published %></td>
+    <td><%= task_document.task_id %></td>
+    <td><%= task_document.document_id %></td>
+    <td><%= link_to 'Show', task_document %></td>
+    <td><%= link_to 'Edit', edit_task_document_path(task_document) %></td>
+    <td><%= link_to 'Destroy', task_document, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Task document', new_task_document_path %>

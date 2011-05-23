@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: Wizytacja
+  content: W dniu jutrzejszym szkole odwiedza SANEPID. Prosze wszystkich o umycie sie na te okazje.
+  school_class_id: 1
+
+two:
+  title: Rozdanie nagrod
+  content: W najblizszy piatek odbedzie sie rozdanie nagrod w konkursie wiedzy o krajach afryki rownikowej.
+  school_class_id: 1

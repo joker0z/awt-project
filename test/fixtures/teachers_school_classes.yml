@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+<% for i in 1..15 
+     for j in 1..20 %>
+fix_<%= i.to_s + j.to_s %>:
+  school_class_id: <%= i %>
+  teacher_id: <%= j %>
+<%   end
+   end %>

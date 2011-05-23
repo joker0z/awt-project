@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+<% for i in 81..100 %>
+fix_<%= i %>:
+  id: <%= i-80 %>
+  first_name: <%= ['Hans' ,'Zygfryd', 'Antoni', 'Jerzy', 'Marianna', 'Anna'].shuffle.first %> 
+  last_name: <%= ['Biedron', 'Moltke', 'Piwnik', 'Ponury', 'Zawada'].shuffle.first %> 
+  user_id: <%= i %>
+<% end %>
