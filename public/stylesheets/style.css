@@ -1,0 +1,113 @@
+body{
+  text-align:center;
+  padding:0px;
+  margin: 0px;
+}
+
+#top{
+  height:auto;
+  background-color:#FFFFFF;
+}
+
+
+
+#login{
+  text-align:left;
+  padding:5px 10px 5px 10px;
+  background-color: #B5D41D;
+}
+
+#CONTEXT{
+  width: 1100px;
+  margin : 0px auto;
+  background-color: #FFFFFF;
+}
+
+#LEFT{
+  text-align:left;
+  float: left;
+  margin: 5px 5px 0px 0px;
+  padding: 0px;
+  width: 460px;
+}
+
+#RIGHT{
+  text-align:left;
+  margin: 5px 0px 0px 5px;
+  padding: 0px;
+  float: left;
+  width: 620px;
+}
+
+#footer{
+  float: left;
+  clear: both;
+  margin: 10px 0px 0px 0px;
+  background-color:#B5D41D;
+  width: 100%;
+  height: 60px;
+
+}
+
+h1,h2,h3{
+  font-family: arial;
+  
+}
+
+h1{
+  font-weight: bold;
+  font-size: 14px;
+  color: #000000;
+}
+
+h2{
+  font-weight: normal;
+  font-size: 14px;
+  color: #000000;
+}
+
+h3{
+  text-align:left;
+  font-size:12px;
+  color: #000000;
+}
+
+table.type1{
+	border-width: 1px;
+	border-spacing: 1px;
+	border-style: none;
+	border-collapse: separate;
+	background-color: transparent;
+}
+table.type1 th {
+	border-width: 0px;
+	padding: 10px;
+	border-style: none;
+	text-align:left;
+}
+table.type1 tr {
+	border-width: 0px;
+	padding: 5px;
+	border-style: none;
+}
+table.type1 td {
+	border-width: 0px;
+	padding: 10px;
+	border-style: none;
+	text-align:left;
+}
+
+a {
+color: #000000;
+text-decoration: none;
+}
+
+a:hover {
+color: #CC3333;
+text-decoration: underline;
+}
+
+a:visited {
+color: #333333;
+text-decoration: none;
+}
