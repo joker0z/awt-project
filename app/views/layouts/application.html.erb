@@ -2,16 +2,42 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta http-equiv="Content-Type" content="text/html;.
-  charset=utf-8" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta http-equiv="Content-Language" content="pl-PL" />
+  <%= csrf_meta_tag %>
   <title>E-szkola</title>
+  <script type="text/javascript">
+  /*
+  * Registers a callback which copies the csrf token into the
+  * X-CSRF-Token header with each ajax request.  Necessary to 
+  * work with rails applications which have fixed
+  * CVE-2011-0447
+  * http://weblog.rubyonrails.org/2011/2/8/csrf-protection-bypass-in-ruby-on-rails
+  */
+
+  Ajax.Responders.register({
+  onCreate: function(request) {
+    var csrf_meta_tag = $$('meta[name=csrf-token]')[0];
+
+    if (csrf_meta_tag)
+    {
+      var header = 'X-CSRF-Token',
+	  token = csrf_meta_tag.readAttribute('content');
+
+      if (!request.options.requestHeaders) {
+	request.options.requestHeaders = {};
+      }
+      request.options.requestHeaders[header] = token;
+    }
+  }
+  });
+  </script>
   <%= stylesheet_link_tag "style" %>
-  <%= javascript_include_tag 'jquery-1.4.2.min', 'rails', 'application' %>
+  <%= javascript_include_tag 'jquery', 'rails', 'application', 'swfobject' %>
 </head>
 <body>
 	<div id="top">
-		<%= image_tag("../images/top.png", :alt => "e-szkola") =%>
+		<%= image_tag("../images/szk_globalna.jpg", :alt => "e-szkola") =%>
     </div> 
   	<div>	
     	<div id="login">
@@ -22,7 +48,7 @@
 		<% end %></h1>
 		<h3><%= link_to "Strona glowna", root_path %></h3>
 	    </div>
-	    <div style="background-color: #fff123;">
+	    <div id="CONTEXT">
       	<%= yield -%>
    		</div>
    		<div id="sidebar"></div>

@@ -1,21 +1,21 @@
-<div id="CONTEXT">
-	<div id="LEFT" style="background-color:#33CC00; width: 365px; height:auto;">
-		<div style="padding: 45px 5px 5px 15px; margin:5px;">
-			<h2>Klasy</h2>
+<div id="LEFT" style="background-color:#E3FF56;; width: 450px; height:auto; background-image:url('../images/teach_class_top.png'); background-repeat:no-repeat;">
+		<div style="padding: 60px 5px 5px 15px; margin:5px;">
 			<% @classes.each do |n| %>
 			<%= link_to n.name, n %> #
 			<% end %>
 		</div>
 	</div> 
-	<div id="RIGHT" style="background-color:#33CC00; height:auto;px;">
-		<div style="padding: 45px 5px 5px 15px; margin:5px;">
-			<h2>Najbliższe zajęcia</h2>
-			<% @plans.each do |n| %>
-			<h3><%= n.subject %></h3>
-			<p><%= n.room %></p>
-			<p><%= Date::DAYNAMES[n.day] + ', godz. ' + n.hour.to_s  %></p>
+<div id="RIGHT" style="background-color:#E3FF56;; height:auto;px; background-image:url('../images/teach_lessons_top.png'); background-repeat:no-repeat;">
+		<div style="padding: 60px 5px 5px 15px; margin:5px;">
+			<% @lessons.each do |n| %>
+			<div id="plan_<%= n.id %>">
+			  <h3><%= n.plan.subject %></h3>
+			  <p><%= n.plan.room %></p>
+			  <p><%= Date::DAYNAMES[n.plan.day] + ', godz. ' + n.plan.hour.to_s  %></p>
+			  <p>Dodanych zadań:&nbsp;<%= n.tasks.count %>&nbsp;<%= link_to 'Dodaj więcej', { :controller => :tasks, :action => :new, :lesson_id => n.id } %></p><br />
+			  <%= link_to 'Szczegóły', n.plan %>
+			</div>
 			<hr />
 			<% end %>
 		</div>
-	</div>	
-</div>
+</div>	

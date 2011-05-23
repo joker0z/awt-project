@@ -1,16 +1,15 @@
-
-<div id="CONTEXT">
-	<div id="LEFT">
-		<div id="tasks" style="background-color:#0066CC; width: 365px;">	
-			<div id="tasks"style="padding: 45px 25px 35px 10px;">		
+<div id="flash_notice" style="display:none"></div>
+<div id="LEFT">
+		<div id="tasks" style="background-color:#E3FF56; background-image:url('../images/stud_tasks_top.png'); background-repeat:no-repeat; width: 450px;">	
+			<div id="tasks"style="padding: 60px 25px 35px 10px;">		
 				<p>Na dziś: <%= @tasksForToday %> zadań</p>
 				<p>Na jutro: <%= @tasksForTomorrow %> zadań</p>
 				<p>Najbliższy tydzień: <%= @tasksForWeek %> zadań</p>				
 				<p style="text-align:right"><%= link_to 'Pełna lista zadań', tasks_path %></p>
 			</div>
 		</div> 
-		<div id="news" style="background-color:#0066CC; width: 365px; margin-top:5px;" >	
-			<div style="padding: 45px 5px 5px 15px; overflow: auto">
+		<div id="news" style="background-color:#E3FF56; background-image:url('../images/stud_news_top.png'); background-repeat:no-repeat; width: 450px; margin-top:5px;" >	
+			<div style="padding: 60px 5px 5px 15px; overflow: auto">
 				<% @news.each do |n| %>
 				<h3><%= n.title %></h3>
 				<p><%= n.created_at %></p>
@@ -20,9 +19,9 @@
 				<p style="text-align:right"><%= link_to 'Wcześniejsze wiadomości', news_index_path %></p>
 			</div>
 		</div>
-	</div>
-	<div id="RIGHT" style="background-color:#0066CC; ">
-		<div style="padding: 45px 5px 5px 15px; margin:5px;">
+</div>
+<div id="RIGHT" style="background-color:#E3FF56; background-image:url('../images/stud_docs_top.png'); background-repeat:no-repeat;">
+		<div style="padding: 60px 5px 5px 15px; margin:5px;">
 			<% @docs.each do |n| %>
 			<h3><%= n.name %></h3>
 			<p><%= n.description %></p>
@@ -31,7 +30,8 @@
 			<% end %>
 		<p style="text-align:right"><%= link_to 'Pozostałe materiały', documents_path %></p>	
 		</div>	
-	</div>	
 </div>	
+<%=link_to 'Pokaz/Schowaj kalendarz', '#', :id => 'my-link' %>
+	
 
 
