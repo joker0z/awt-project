@@ -5,8 +5,8 @@ development:
   database: awt
   pool: 5
   timeout: 5000
-  username: whc
-  password: whC.02kz
+  username: 
+  password: 
   host: localhost
   encoding: utf8
 
@@ -26,7 +26,7 @@ production:
   database: awt
   pool: 5
   timeout: 5000
-  username: whc
-  password: whC.02kz
+  username: 
+  password: 
   host: localhost
   encoding: utf8

@@ -7,3 +7,11 @@ fix_<%= i.to_s + j.to_s %>:
   plan_id: <%= 1+rand(30) %>
   date: <%= Time.parse 'May '+(19+rand(13)).to_s  %>
 <% end %>
+
+<% for i in 1..100 %>
+fix_<%= (200+i+j).to_s %>:
+  id: <%= 200+i %>
+  school_class_id: <%= 1+rand(15) %>
+  plan_id: <%= 1+rand(30) %>
+  date: <%= Time.parse 'June '+(1+rand(30)).to_s  %>
+<% end %>

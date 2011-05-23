@@ -5,10 +5,9 @@ gem 'rails', '3.0.5'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'mysql'
 gem 'devise'
-gem "nested_form", :git => "git://github.com/madebydna/nested_form.git"
+
 
 # Use unicorn as the web server
 # gem 'unicorn'

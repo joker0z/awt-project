@@ -104,27 +104,10 @@ ActiveRecord::Schema.define(:version => 20110510171335) do
     t.integer  "lesson_id"
   end
 
-  create_table "tasks_documents", :id => false, :force => true do |t|
-    t.integer "document_id", :null => false
-    t.integer "task_id",     :null => false
-  end
-
   create_table "teachers", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "teachers_school_classes", :id => false, :force => true do |t|
-    t.integer "school_class_id"
-    t.integer "teacher_id"
-  end
-
-  create_table "teachings", :force => true do |t|
-    t.integer  "class_id"
-    t.integer  "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
